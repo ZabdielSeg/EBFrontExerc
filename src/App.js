@@ -19,7 +19,7 @@ function App() {
 
   const [pokemonToShow, setPokemonToShow] = useState({});
   
-  const getPokemon = name => {
+  const getSinglePokemon = name => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then(response => {
         setErrorMessage(false);
@@ -36,7 +36,7 @@ function App() {
       <div className="container col-xxl-8 px-4 py-5">
         <div className="row  align-items-center justify-content-center g-5 py-5">
           <div className="col-lg-6">
-            <MainComponent pokemons={somePokemons} obtainPokemon={getPokemon} errorMess={errorMessage} />
+            <MainComponent pokemons={somePokemons} obtainPokemon={getSinglePokemon} errorMess={errorMessage} />
           </div>
           <div className="col-lg-6">
             {
